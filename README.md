@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crypto Price Tracker
 
-## Getting Started
+A Next.js application that displays live cryptocurrency price data using the CoinGecko API.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This application tracks prices for popular cryptocurrencies and displays their current price, symbol, and 24-hour price change percentage. The data is automatically refreshed every 30 seconds to provide up-to-date information.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Live tracking of cryptocurrency prices (Bitcoin, Ethereum, Solana, Polygon, Dogecoin)
+- 24-hour price change percentage with visual indicators (green for positive, red for negative)
+- Auto-refresh data every 30 seconds
+- Search and add additional cryptocurrencies
+- Sort cryptocurrencies by price change (ascending/descending)
+- Responsive design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Framework**: Next.js
+- **Data Fetching**: React Query (@tanstack/react-query)
+- **API**: CoinGecko API
+- **Styling**: Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/crypto-tracker.git
+   cd crypto-tracker
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Build for production:
+   ```bash
+   npm run build
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Start the production server:
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+- The main page displays a list of cryptocurrencies with their current price and 24-hour change
+- Click the sort button to toggle between ascending and descending order based on 24-hour price change
+
+## API Reference
+
+This project uses the CoinGecko API to fetch cryptocurrency price data:
+- Endpoint: `https://api.coingecko.com/api/v3/coins/markets`
+- Parameters:
+  - `vs_currency=usd` - Convert prices to USD
+  - `ids=bitcoin,ethereum,etc` - Specify which cryptocurrencies to fetch
+  - `price_change_percentage=24h` - Include 24-hour price change data
+
+
+## License
+
+[MIT](LICENSE)
